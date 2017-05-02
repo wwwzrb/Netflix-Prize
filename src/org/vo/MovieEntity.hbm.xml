@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="org.vo.MovieEntity" table="movie" schema="movielens">
+        <id name="id" column="Id" >
+            <generator class="native"/>
+        </id>
+        <property name="movieId" column="MovieId"/>
+        <property name="title" column="Title"/>
+        <property name="rawPlots" column="RawPlots"/>
+        <property name="date" column="Date"/>
+        <property name="genre" column="Genre"/>
+    </class>
+</hibernate-mapping>
