@@ -54,7 +54,7 @@ public class RatingDaoImpl extends SuperDao implements RatingDao {
                     System.out.println("session clear:"+count);
                 }
             }
-            tx.commit();
+            tx.commit();//query执行后再提交事务！
         }
         catch(Exception e){
             if(tx!=null)
