@@ -32,64 +32,108 @@
       <DataType>varchar(255)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="16" parent="10" name="RawPlots">
-      <Position>4</Position>
-      <DataType>text|0</DataType>
-    </column>
-    <column id="17" parent="10" name="Date">
-      <Position>6</Position>
+    <column id="16" parent="10" name="Date">
+      <Position>17</Position>
       <DataType>int(11)|0</DataType>
     </column>
-    <column id="18" parent="10" name="Genre">
+    <column id="17" parent="10" name="Genre">
+      <Position>16</Position>
+      <DataType>text|0</DataType>
+    </column>
+    <column id="18" parent="10" name="Released">
+      <Position>4</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="19" parent="10" name="Director">
       <Position>5</Position>
       <DataType>text|0</DataType>
     </column>
-    <index id="19" parent="10" name="MovieId">
+    <column id="20" parent="10" name="Writer">
+      <Position>6</Position>
+      <DataType>text|0</DataType>
+    </column>
+    <column id="21" parent="10" name="Actors">
+      <Position>7</Position>
+      <DataType>text|0</DataType>
+    </column>
+    <column id="22" parent="10" name="ShortPlot">
+      <Position>8</Position>
+      <DataType>text|0</DataType>
+    </column>
+    <column id="23" parent="10" name="RawPlot">
+      <Position>9</Position>
+      <DataType>text|0</DataType>
+    </column>
+    <column id="24" parent="10" name="Language">
+      <Position>10</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="25" parent="10" name="Country">
+      <Position>11</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="26" parent="10" name="Poster">
+      <Position>12</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="27" parent="10" name="imdbRating">
+      <Position>13</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="28" parent="10" name="imdbVotes">
+      <Position>14</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="29" parent="10" name="imdbID">
+      <Position>15</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <index id="30" parent="10" name="MovieId">
       <ColNames>MovieId</ColNames>
     </index>
-    <key id="20" parent="10" name="PRIMARY">
+    <key id="31" parent="10" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>Id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="21" parent="11" name="Id">
+    <column id="32" parent="11" name="Id">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="22" parent="11" name="MovieId">
+    <column id="33" parent="11" name="MovieId">
       <Position>2</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="23" parent="11" name="UserId">
+    <column id="34" parent="11" name="UserId">
       <Position>3</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="24" parent="11" name="Rating">
+    <column id="35" parent="11" name="Rating">
       <Position>4</Position>
       <DataType>float(11)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="25" parent="11" name="Time">
+    <column id="36" parent="11" name="Time">
       <Position>5</Position>
       <DataType>varchar(11)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <index id="26" parent="11" name="movie_id">
+    <index id="37" parent="11" name="movie_id">
       <ColNames>MovieId</ColNames>
     </index>
-    <index id="27" parent="11" name="user_id">
+    <index id="38" parent="11" name="user_id">
       <ColNames>UserId</ColNames>
     </index>
-    <key id="28" parent="11" name="PRIMARY">
+    <key id="39" parent="11" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>Id</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="29" parent="11" name="movie_id">
+    <foreign-key id="40" parent="11" name="movie_id">
       <ColNames>MovieId</ColNames>
       <RefSchemaName>movielens</RefSchemaName>
       <RefTableName>movie</RefTableName>
@@ -97,7 +141,7 @@
       <OnUpdate>cascade</OnUpdate>
       <OnDelete>cascade</OnDelete>
     </foreign-key>
-    <foreign-key id="30" parent="11" name="user_id">
+    <foreign-key id="41" parent="11" name="user_id">
       <ColNames>UserId</ColNames>
       <RefSchemaName>movielens</RefSchemaName>
       <RefTableName>user</RefTableName>
@@ -105,27 +149,27 @@
       <OnUpdate>cascade</OnUpdate>
       <OnDelete>cascade</OnDelete>
     </foreign-key>
-    <column id="31" parent="12" name="Id">
+    <column id="42" parent="12" name="Id">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="32" parent="12" name="UserId">
+    <column id="43" parent="12" name="UserId">
       <Position>2</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="33" parent="12" name="Time">
+    <column id="44" parent="12" name="Time">
       <Position>3</Position>
       <DataType>timestamp|0</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>&apos;2017-03-28 00:00:00&apos;</DefaultExpression>
     </column>
-    <index id="34" parent="12" name="UserId">
+    <index id="45" parent="12" name="UserId">
       <ColNames>UserId</ColNames>
     </index>
-    <key id="35" parent="12" name="PRIMARY">
+    <key id="46" parent="12" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>Id</ColNames>
       <Primary>1</Primary>

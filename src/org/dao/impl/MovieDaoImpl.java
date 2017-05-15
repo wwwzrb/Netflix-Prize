@@ -85,13 +85,19 @@ public class MovieDaoImpl extends SuperDao implements MovieDao {
                 String result=httpUtil.get(url.toString());
                 System.out.println(result);
                 ResponseModel responseModel=gson.fromJson(result, ResponseModel.class);
-                if(responseModel.getResponse().equals("False")) {
-                   movie.setRawPlots("N/A");
-                }
-                else{
+                if(!responseModel.getResponse().equals("False")) {
                     MovieModel movieModel=gson.fromJson(result,MovieModel.class);
-                    movie.setTitle(movieModel.getTitle());
-                    movie.setRawPlots(movieModel.getPlot());
+                    movie.setReleased(movieModel.getReleased());
+                    movie.setDirector(movieModel.getDirector());
+                    movie.setWriter(movieModel.getWriter());
+                    movie.setActors(movieModel.getActors());
+                    movie.setShortPlot(movieModel.getPlot());
+                    movie.setLanguage(movieModel.getLanguage());
+                    movie.setCountry(movieModel.getCountry());
+                    movie.setPoster(movieModel.getPoster());
+                    movie.setImdbRating(movieModel.getImdbRating());
+                    movie.setImdbVotes(movieModel.getImdbVotes());
+                    movie.setImdbId(movieModel.getImdbID());
                 }
                 session.update(movie);
             }catch (Exception e){

@@ -27,13 +27,13 @@ public class Main {
         */
         /*
         MovieDao movieDao=new MovieDaoImpl();
-        for(int i=1;i<=9125;i++){
-            movieDao.updateMovie(i);
-        }
+        movieDao.updateMovie(1);
         */
+
+        /*
         List<RatingModel> ratings=stream.getRatings();
         RatingDao ratingDao=new RatingDaoImpl();
         ratingDao.insertRatings(ratings);
-
+        */
     }
 }

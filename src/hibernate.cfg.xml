@@ -6,9 +6,9 @@
     <session-factory>
         <property name="connection.url">jdbc:mysql://localhost:3306/movielens</property>
         <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
-        <property name="connection.username">admin</property>
-        <property name="connection.password">2315</property>
         <property name="hibernate.jdbc.batch_size">1000</property>
+        <property name="connection.username">root</property>
+        <property name="connection.password">2315</property>
         <mapping resource="org/vo/MovieEntity.hbm.xml"/>
         <mapping resource="org/vo/RatingEntity.hbm.xml"/>
         <mapping resource="org/vo/UserEntity.hbm.xml"/>

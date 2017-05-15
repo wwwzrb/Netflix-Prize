@@ -5,13 +5,22 @@
 <hibernate-mapping>
 
     <class name="org.vo.MovieEntity" table="movie" schema="movielens">
-        <id name="id" column="Id" >
-            <generator class="native"/>
-        </id>
+        <id name="id" column="Id"/>
         <property name="movieId" column="MovieId"/>
         <property name="title" column="Title"/>
-        <property name="rawPlots" column="RawPlots"/>
         <property name="date" column="Date"/>
         <property name="genre" column="Genre"/>
+        <property name="released" column="Released"/>
+        <property name="director" column="Director"/>
+        <property name="writer" column="Writer"/>
+        <property name="actors" column="Actors"/>
+        <property name="shortPlot" column="ShortPlot"/>
+        <property name="rawPlot" column="RawPlot"/>
+        <property name="language" column="Language"/>
+        <property name="country" column="Country"/>
+        <property name="poster" column="Poster"/>
+        <property name="imdbRating" column="imdbRating"/>
+        <property name="imdbVotes" column="imdbVotes"/>
+        <property name="imdbId" column="imdbID"/>
     </class>
 </hibernate-mapping>

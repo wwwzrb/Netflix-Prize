@@ -7,7 +7,7 @@ public class UrlModel {
     private static String url="http://www.omdbapi.com/?";
     private String t;
     private String y;
-    private static String plot="full";
+    private static String plot="short";
 
     public String getT() {
         return t;
@@ -40,6 +40,6 @@ public class UrlModel {
 
     @Override
     public String toString(){
-        return url+"t="+t+"&y="+y+"&plot=full";
+        return url+"t="+t+"&y="+y+"&plot=short";
     }
 }
