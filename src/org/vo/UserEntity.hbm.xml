@@ -5,10 +5,7 @@
 <hibernate-mapping>
 
     <class name="org.vo.UserEntity" table="user" schema="movielens">
-        <id name="id" column="Id">
-            <generator class="native"/>
-        </id>
-        <property name="userId" column="UserId"/>
+        <id name="userId" column="UserId"/>
         <property name="time" column="Time"/>
     </class>
 </hibernate-mapping>

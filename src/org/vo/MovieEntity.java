@@ -4,7 +4,6 @@ package org.vo;
  * Created by 王哲 on 2017/5/15.
  */
 public class MovieEntity {
-    private int id;
     private int movieId;
     private String title;
     private Integer date;
@@ -22,13 +21,6 @@ public class MovieEntity {
     private String imdbVotes;
     private String imdbId;
 
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
 
     public int getMovieId() {
         return movieId;
@@ -165,7 +157,6 @@ public class MovieEntity {
 
         MovieEntity that = (MovieEntity) o;
 
-        if (id != that.id) return false;
         if (movieId != that.movieId) return false;
         if (title != null ? !title.equals(that.title) : that.title != null) return false;
         if (date != null ? !date.equals(that.date) : that.date != null) return false;
@@ -188,8 +179,7 @@ public class MovieEntity {
 
     @Override
     public int hashCode() {
-        int result = id;
-        result = 31 * result + movieId;
+        int result = movieId;
         result = 31 * result + (title != null ? title.hashCode() : 0);
         result = 31 * result + (date != null ? date.hashCode() : 0);
         result = 31 * result + (genre != null ? genre.hashCode() : 0);

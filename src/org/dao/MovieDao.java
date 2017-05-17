@@ -12,4 +12,5 @@ public interface MovieDao {
     MovieEntity getMovie(int movieId);
     void insertMovies(List<MovieEntity> movies);
     void updateMovie(int id);
+    void updatePlot(int id);
 }

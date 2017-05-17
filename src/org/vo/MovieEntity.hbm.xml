@@ -5,8 +5,7 @@
 <hibernate-mapping>
 
     <class name="org.vo.MovieEntity" table="movie" schema="movielens">
-        <id name="id" column="Id"/>
-        <property name="movieId" column="MovieId"/>
+        <id name="movieId" column="MovieId"/>
         <property name="title" column="Title"/>
         <property name="date" column="Date"/>
         <property name="genre" column="Genre"/>

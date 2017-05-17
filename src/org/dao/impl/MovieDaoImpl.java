@@ -116,4 +116,47 @@ public class MovieDaoImpl extends SuperDao implements MovieDao {
         }
     }
 
+    @Override
+    public void updatePlot(int id){
+        Session session=getSessionFactory().openSession();
+        Transaction tx=null;
+        MovieEntity movie;
+        try{
+            tx=session.beginTransaction();
+            movie=session.get(MovieEntity.class,id);
+            if(movie==null)
+                return;
+            UrlModel url=new UrlModel();
+            url.setT(movie.getTitle());
+            String y=movie.getDate().toString();
+            System.out.println(y);
+            url.setY(y);
+            okHttpUtil httpUtil=new okHttpUtil();
+            Gson gson=new Gson();
+            try{
+                System.out.println(url.toString());
+                String result=httpUtil.get(url.toString());
+                System.out.println(result);
+                ResponseModel responseModel=gson.fromJson(result, ResponseModel.class);
+                if(!responseModel.getResponse().equals("False")) {
+                    MovieModel movieModel=gson.fromJson(result,MovieModel.class);
+                    movie.setShortPlot(movieModel.getPlot());
+                }
+                session.update(movie);
+            }catch (Exception e){
+                e.printStackTrace();
+            }
+            tx.commit();
+        }
+        catch(Exception e){
+            if(tx!=null)
+                tx.rollback();;
+            e.printStackTrace();
+        }finally {
+            {
+                session.close();
+            }
+        }
+    }
+
 }

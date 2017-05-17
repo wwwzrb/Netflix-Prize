@@ -25,10 +25,13 @@ public class Main {
         MovieDao movieDao=new MovieDaoImpl();
         movieDao.insertMovies(movies);
         */
-        /*
+
         MovieDao movieDao=new MovieDaoImpl();
-        movieDao.updateMovie(1);
-        */
+        for(int i=1;i<=244;i++){
+            movieDao.updatePlot(i);
+        }
+
+
 
         /*
         List<RatingModel> ratings=stream.getRatings();

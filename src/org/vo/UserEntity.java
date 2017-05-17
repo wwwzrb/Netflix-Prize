@@ -6,17 +6,9 @@ import java.sql.Timestamp;
  * Created by 王哲 on 2017/5/2.
  */
 public class UserEntity {
-    private int id;
     private int userId;
     private Timestamp time;
 
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
 
     public int getUserId() {
         return userId;
@@ -41,7 +33,6 @@ public class UserEntity {
 
         UserEntity that = (UserEntity) o;
 
-        if (id != that.id) return false;
         if (userId != that.userId) return false;
         if (time != null ? !time.equals(that.time) : that.time != null) return false;
 
@@ -50,8 +41,7 @@ public class UserEntity {
 
     @Override
     public int hashCode() {
-        int result = id;
-        result = 31 * result + userId;
+        int result = userId;
         result = 31 * result + (time != null ? time.hashCode() : 0);
         return result;
     }
