@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="org.vo.UserEntity" table="user" schema="movielens">
+        <id name="userId" column="UserId"/>
+        <property name="time" column="Time"/>
+
+        <set name="ratings" cascade="all">
+            <key column="userId"/>
+            <one-to-many class="org.vo.RatingEntity"/>
+        </set>
+        <set name="cfratings" cascade="all">
+            <key column="userId"/>
+            <one-to-many class="org.vo.CfratingEntity"/>
+        </set>
+
+    </class>
+</hibernate-mapping>

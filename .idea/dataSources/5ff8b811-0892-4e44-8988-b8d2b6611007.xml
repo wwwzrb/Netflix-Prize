@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="dataSource">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="4.1">
+    <root id="1"/>
+    <schema id="2" parent="1" name="movielenshow">
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="3" parent="1" name="information_schema"/>
+    <schema id="4" parent="1" name="movie"/>
+    <schema id="5" parent="1" name="movielens"/>
+    <schema id="6" parent="1" name="mysql"/>
+    <schema id="7" parent="1" name="performance_schema"/>
+    <schema id="8" parent="1" name="sakila"/>
+    <schema id="9" parent="1" name="sys"/>
+    <schema id="10" parent="1" name="world"/>
+    <table id="11" parent="2" name="cfrating"/>
+    <table id="12" parent="2" name="movie"/>
+    <table id="13" parent="2" name="rating"/>
+    <table id="14" parent="2" name="similarity"/>
+    <table id="15" parent="2" name="user"/>
+    <column id="16" parent="11" name="Id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="17" parent="11" name="MovieId">
+      <Position>2</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="18" parent="11" name="UserId">
+      <Position>3</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="19" parent="11" name="Rating">
+      <Position>4</Position>
+      <DataType>float(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="20" parent="11" name="Time">
+      <Position>5</Position>
+      <DataType>timestamp|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;2017-05-01 00:00:00&apos;</DefaultExpression>
+    </column>
+    <index id="21" parent="11" name="movie_id">
+      <ColNames>MovieId</ColNames>
+    </index>
+    <index id="22" parent="11" name="user_id">
+      <ColNames>UserId</ColNames>
+    </index>
+    <key id="23" parent="11" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>Id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="24" parent="11" name="FK6bs1b3evsgodyrbdet8flauk5">
+      <ColNames>MovieId</ColNames>
+      <RefSchemaName>movielenshow</RefSchemaName>
+      <RefTableName>movie</RefTableName>
+      <RefColNames>MovieId</RefColNames>
+    </foreign-key>
+    <foreign-key id="25" parent="11" name="fk_3">
+      <ColNames>MovieId</ColNames>
+      <RefSchemaName>movielenshow</RefSchemaName>
+      <RefTableName>movie</RefTableName>
+      <RefColNames>MovieId</RefColNames>
+      <OnUpdate>cascade</OnUpdate>
+      <OnDelete>cascade</OnDelete>
+    </foreign-key>
+    <foreign-key id="26" parent="11" name="FKknxsonjff6m8uqgdnkj84vua8">
+      <ColNames>UserId</ColNames>
+      <RefSchemaName>movielenshow</RefSchemaName>
+      <RefTableName>user</RefTableName>
+      <RefColNames>UserId</RefColNames>
+    </foreign-key>
+    <foreign-key id="27" parent="11" name="fk_4">
+      <ColNames>UserId</ColNames>
+      <RefSchemaName>movielenshow</RefSchemaName>
+      <RefTableName>user</RefTableName>
+      <RefColNames>UserId</RefColNames>
+      <OnUpdate>cascade</OnUpdate>
+      <OnDelete>cascade</OnDelete>
+    </foreign-key>
+    <column id="28" parent="12" name="MovieId">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="29" parent="12" name="Title">
+      <Position>2</Position>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="30" parent="12" name="Released">
+      <Position>3</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="31" parent="12" name="Director">
+      <Position>4</Position>
+      <DataType>text|0</DataType>
+    </column>
+    <column id="32" parent="12" name="Writer">
+      <Position>5</Position>
+      <DataType>text|0</DataType>
+    </column>
+    <column id="33" parent="12" name="Actors">
+      <Position>6</Position>
+      <DataType>text|0</DataType>
+    </column>
+    <column id="34" parent="12" name="ShortPlot">
+      <Position>7</Position>
+      <DataType>text|0</DataType>
+    </column>
+    <column id="35" parent="12" name="RawPlot">
+      <Position>8</Position>
+      <DataType>text|0</DataType>
+    </column>
+    <column id="36" parent="12" name="Language">
+      <Position>9</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="37" parent="12" name="Country">
+      <Position>10</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="38" parent="12" name="Poster">
+      <Position>11</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="39" parent="12" name="imdbRating">
+      <Position>12</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="40" parent="12" name="imdbVotes">
+      <Position>13</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="41" parent="12" name="imdbID">
+      <Position>14</Position>
+      <DataType>varchar(255)|0</DataType>
+    </column>
+    <column id="42" parent="12" name="Genre">
+      <Position>15</Position>
+      <DataType>text|0</DataType>
+    </column>
+    <column id="43" parent="12" name="Date">
+      <Position>16</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <index id="44" parent="12" name="MovieId">
+      <ColNames>MovieId</ColNames>
+    </index>
+    <key id="45" parent="12" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>MovieId</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="46" parent="13" name="Id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="47" parent="13" name="MovieId">
+      <Position>2</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="48" parent="13" name="UserId">
+      <Position>3</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="49" parent="13" name="Rating">
+      <Position>4</Position>
+      <DataType>float(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="50" parent="13" name="ToU">
+      <Position>5</Position>
+      <DataType>float|0</DataType>
+    </column>
+    <column id="51" parent="13" name="ToUCF">
+      <Position>6</Position>
+      <DataType>float|0</DataType>
+    </column>
+    <column id="52" parent="13" name="Time">
+      <Position>7</Position>
+      <DataType>varchar(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="53" parent="13" name="FK81p5w8bou0vt2t3gebpiw62ro">
+      <ColNames>MovieId</ColNames>
+    </index>
+    <index id="54" parent="13" name="FKqdx9sqr7ak5whvbr21rwflkju">
+      <ColNames>UserId</ColNames>
+    </index>
+    <key id="55" parent="13" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>Id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="56" parent="13" name="FK81p5w8bou0vt2t3gebpiw62ro">
+      <ColNames>MovieId</ColNames>
+      <RefSchemaName>movielenshow</RefSchemaName>
+      <RefTableName>movie</RefTableName>
+      <RefColNames>MovieId</RefColNames>
+    </foreign-key>
+    <foreign-key id="57" parent="13" name="fk_1">
+      <ColNames>MovieId</ColNames>
+      <RefSchemaName>movielenshow</RefSchemaName>
+      <RefTableName>movie</RefTableName>
+      <RefColNames>MovieId</RefColNames>
+      <OnUpdate>cascade</OnUpdate>
+      <OnDelete>cascade</OnDelete>
+    </foreign-key>
+    <foreign-key id="58" parent="13" name="FKqdx9sqr7ak5whvbr21rwflkju">
+      <ColNames>UserId</ColNames>
+      <RefSchemaName>movielenshow</RefSchemaName>
+      <RefTableName>user</RefTableName>
+      <RefColNames>UserId</RefColNames>
+    </foreign-key>
+    <foreign-key id="59" parent="13" name="fk_2">
+      <ColNames>UserId</ColNames>
+      <RefSchemaName>movielenshow</RefSchemaName>
+      <RefTableName>user</RefTableName>
+      <RefColNames>UserId</RefColNames>
+      <OnUpdate>cascade</OnUpdate>
+      <OnDelete>cascade</OnDelete>
+    </foreign-key>
+    <column id="60" parent="14" name="Id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="61" parent="14" name="MovieId">
+      <Position>2</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="62" parent="14" name="SimilarId">
+      <Position>3</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="63" parent="14" name="Similarity">
+      <Position>4</Position>
+      <DataType>double|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="64" parent="14" name="Time">
+      <Position>5</Position>
+      <DataType>timestamp|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;2017-05-01 00:00:00&apos;</DefaultExpression>
+    </column>
+    <index id="65" parent="14" name="FK3lx8ym1x6j6fphwoo18oqnln7">
+      <ColNames>SimilarId</ColNames>
+    </index>
+    <index id="66" parent="14" name="FKrujq8qdl2fb5a1v7xt4hmipfa">
+      <ColNames>MovieId</ColNames>
+    </index>
+    <key id="67" parent="14" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>Id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="68" parent="14" name="FKrujq8qdl2fb5a1v7xt4hmipfa">
+      <ColNames>MovieId</ColNames>
+      <RefSchemaName>movielenshow</RefSchemaName>
+      <RefTableName>movie</RefTableName>
+      <RefColNames>MovieId</RefColNames>
+    </foreign-key>
+    <foreign-key id="69" parent="14" name="fk_5">
+      <ColNames>MovieId</ColNames>
+      <RefSchemaName>movielenshow</RefSchemaName>
+      <RefTableName>movie</RefTableName>
+      <RefColNames>MovieId</RefColNames>
+      <OnUpdate>cascade</OnUpdate>
+      <OnDelete>cascade</OnDelete>
+    </foreign-key>
+    <foreign-key id="70" parent="14" name="FK3lx8ym1x6j6fphwoo18oqnln7">
+      <ColNames>SimilarId</ColNames>
+      <RefSchemaName>movielenshow</RefSchemaName>
+      <RefTableName>movie</RefTableName>
+      <RefColNames>MovieId</RefColNames>
+    </foreign-key>
+    <foreign-key id="71" parent="14" name="fk_6">
+      <ColNames>SimilarId</ColNames>
+      <RefSchemaName>movielenshow</RefSchemaName>
+      <RefTableName>movie</RefTableName>
+      <RefColNames>MovieId</RefColNames>
+      <OnUpdate>cascade</OnUpdate>
+      <OnDelete>cascade</OnDelete>
+    </foreign-key>
+    <column id="72" parent="15" name="UserId">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="73" parent="15" name="Time">
+      <Position>2</Position>
+      <DataType>timestamp|0</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;2017-03-28 00:00:00&apos;</DefaultExpression>
+    </column>
+    <index id="74" parent="15" name="UserId">
+      <ColNames>UserId</ColNames>
+    </index>
+    <key id="75" parent="15" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>UserId</ColNames>
+      <Primary>1</Primary>
+    </key>
+  </database-model>
+</dataSource>

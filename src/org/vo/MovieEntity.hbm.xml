@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="org.vo.MovieEntity" table="movie" schema="movielens">
+        <id name="movieId" column="MovieId"/>
+        <property name="title" column="Title"/>
+        <property name="released" column="Released"/>
+        <property name="director" column="Director"/>
+        <property name="writer" column="Writer"/>
+        <property name="actors" column="Actors"/>
+        <property name="shortPlot" column="ShortPlot"/>
+        <property name="rawPlot" column="RawPlot"/>
+        <property name="language" column="Language"/>
+        <property name="country" column="Country"/>
+        <property name="poster" column="Poster"/>
+        <property name="imdbRating" column="imdbRating"/>
+        <property name="imdbVotes" column="imdbVotes"/>
+        <property name="imdbId" column="imdbID"/>
+        <property name="genre" column="Genre"/>
+        <property name="date" column="Date"/>
+
+        <set name="ratings" cascade="all">
+            <key column="movieId"/>
+            <one-to-many class="org.vo.RatingEntity"/>
+        </set>
+        <set name="cfratings" cascade="all">
+            <key column="movieId"/>
+            <one-to-many class="org.vo.CfratingEntity"/>
+        </set>
+        <set name="movies" table="similarity" lazy="true" cascade="all">
+            <key column="movieId"/>
+            <many-to-many class="org.vo.MovieEntity" column="similarId"/>
+        </set>
+
+    </class>
+</hibernate-mapping>
